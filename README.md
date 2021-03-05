@@ -29,3 +29,12 @@ self.data_dict = {
  "person_4" : ["b", "b", "b", "b", "b", "b", "b", "b", "a", "b"],
         }
 ```
+
+## Other uses of similar backend
+
+This backend and model is not just restricted to a dating app use-case.
+It can basically be used for any survey with two options as answers for the questionnaire.
+Using it as a backend of a flutter app, it can be a survey about
+* Whether you're a dog person or a cat person
+* A Marvel fan or a DC fan
+* It can even be transformed into an app that takes in questions from the user, makes a survey, gets it answered by people, and make a pooled result for the user.
