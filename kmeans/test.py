@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 import pickle
 
-model = pickle.load(open("kmeans_model.pkl", "rb"))
+model = pickle.load(open("models/kmeans_model.pkl", "rb"))
 testdf = pd.DataFrame(columns=["T0", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9"])
 testlists = []
 for i in range(0,11):

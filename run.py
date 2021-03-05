@@ -10,16 +10,21 @@ class Run():
         }
         self.cluster1 = []
         self.cluster2 = []
-        self.predict = GetPredictions()
-        results = self.predict.predict(self.data_dict)
-        print("\nPrediction: {}\n".format(results))
-        for person, cluster in results.items():
-            if cluster == 0:
-                self.cluster1.append(person)
-            elif cluster == 1:
-                self.cluster2.append(person)
-        print("Got a similarity match for {}".format(self.cluster1))
-        print("Got a similarity match for {}\n".format(self.cluster2))
+        self.svc_predict = GetPredictions()
+        results = self.svc_predict.predict(self.data_dict)
+        people_list = results.keys()
+        covered_person = []
+        matching_probabilities = {}
+        for person in results.keys():
+            for listed_person in people_list:
+                if(person != listed_person and listed_person not in covered_person):
+                    matching_probabilities["{} - {}".format(person, listed_person)] = 100 \
+                                    - (abs(results[person][0] - results[listed_person][0])*100 
+                                    + abs(results[person][1] - results[listed_person][1])*100)
+                    covered_person.append(person)
+        for match, probability in matching_probabilities.items():
+            print("\n\t{} ----> {}%".format(match, round(probability, 2)))
+        
 
 if __name__ == "__main__":
     Run()

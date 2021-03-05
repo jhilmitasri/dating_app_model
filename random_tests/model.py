@@ -24,7 +24,7 @@ hac = AgglomerativeClustering(n_clusters=2)
 
 # Fitting
 hac.fit(df)
-pickle.dump(hac, open("hac_model.pkl", "wb"))
+pickle.dump(hac, open("models/hac_model.pkl", "wb"))
 # Getting cluster assignments
 cluster_assignments = hac.labels_
 
@@ -32,7 +32,7 @@ cluster_assignments = hac.labels_
 # k_means = KMeans(n_clusters=2)
 
 # k_means.fit(df)
-# pickle.dump(k_means, open("kmeans_model.pkl", "wb"))
+# pickle.dump(k_means, open("models/kmeans_model.pkl", "wb"))
 
 
 # cluster_assignments = k_means.predict(df)

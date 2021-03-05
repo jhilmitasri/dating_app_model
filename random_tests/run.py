@@ -6,7 +6,7 @@ from sklearn import preprocessing
 
 model_name = "kmeans"
 
-model = pickle.load(open("kmeans_model.pkl", "rb"))
+model = pickle.load(open("models/kmeans_model.pkl", "rb"))
 ans1 = ["a", "a", "a", "a", "a", "a", "a", "b", "b", "b"]
 ans2 = ["b", "b", "b", "b", "b", "a", "b", "b", "a", "b"]
 ans3 = ["a", "a", "b", "b", "a", "a", "b", "a", "b", "a"]
